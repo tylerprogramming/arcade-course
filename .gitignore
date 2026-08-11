@@ -1,0 +1,26 @@
+# secrets — never commit
+.env
+*.pem
+*.key
+
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# arcade / tool worker build artifacts (confirm names from docs)
+dist/
+build/
+*.egg-info/
+
+# editor / os
+.vscode/
+.idea/
+.DS_Store
+
+# logs
+*.log

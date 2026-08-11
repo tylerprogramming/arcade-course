@@ -1,0 +1,26 @@
+# Arcade course project — Python deps (verified against Arcade docs, 2026-08).
+# Python 3.11+. Install: pip install -r requirements.txt
+
+# Arcade Python client (used by module 03 langchain + module 05 scheduled agent)
+arcadepy
+
+# Claude (module 05 planner reasoning, + LangChain/CrewAI model swap)
+anthropic
+langchain-anthropic
+
+# LangChain / LangGraph agent (module 03)
+langchain
+langgraph
+
+# CrewAI (module 04). NOTE: crewai-arcade is DEPRECATED (v2.0.1) — do NOT install it.
+# Current pattern = plain crewai[tools] + arcadepy, wiring tools yourself (see 04-crewai/main.py).
+crewai[tools]
+
+# utilities
+python-dotenv
+httpx
+
+# NOTE: the custom-tool framework (module 02) is a CLI tool, installed separately:
+#   uv tool install arcade-mcp
+# It provides the `arcade` CLI (arcade new / arcade deploy) and the
+# `arcade_mcp_server` import used in 02-custom-tool/server.py.

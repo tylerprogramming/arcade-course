@@ -1,0 +1,25 @@
+[project]
+name = "arcade-course"
+version = "0.1.0"
+description = "Hands-on project for the full Arcade.dev course (video 047)"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "arcadepy",           # Arcade Python client (modules 3, 5)
+    "anthropic",          # Claude, for the scheduled planner (module 5)
+    "langchain",          # LangGraph agent (module 3)
+    "langchain-anthropic",
+    "langgraph",
+    "crewai[tools]",      # CrewAI crew (module 4). NOTE: do NOT add crewai-arcade (deprecated)
+    "python-dotenv",
+    "httpx",              # used by the custom tool examples
+    "langchain-openai>=1.4.3",
+    "openai>=2.53.0",
+]
+
+# This is an application, not a library — don't try to build/install it as a package.
+[tool.uv]
+package = false
+
+# The custom-tool CLI (module 2) is installed separately as a uv tool, not a dep here:
+#   uv tool install arcade-mcp
