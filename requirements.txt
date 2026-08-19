@@ -4,7 +4,11 @@
 # Arcade Python client (used by module 03 langchain + module 05 scheduled agent)
 arcadepy
 
-# Claude (module 05 planner reasoning, + LangChain/CrewAI model swap)
+# OpenAI — the DEFAULT provider (LLM_PROVIDER=openai in .env), modules 03/04/05
+openai
+langchain-openai
+
+# Claude — the alternate provider (LLM_PROVIDER=anthropic), modules 03/04/05
 anthropic
 langchain-anthropic
 

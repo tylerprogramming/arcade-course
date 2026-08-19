@@ -23,20 +23,25 @@ New here? Start with **[`INSTALL.md`](INSTALL.md)** — a 10-minute, copy-paste 
 
 Deps live in `pyproject.toml`, locked in `uv.lock`, on **Python 3.12** (pinned in `.python-version`). uv installs that Python for you, into its own managed dir — it never touches your system Python.
 
-1. **Install uv** once: `brew install uv` (or `pip3 install uv`, or the installer at https://docs.astral.sh/uv).
-2. **Install everything** (uv fetches Python 3.12 automatically):
+1. **Get the code**:
+   ```
+   git clone https://github.com/tylerprogramming/arcade-course.git
+   cd arcade-course
+   ```
+2. **Install uv** once: `brew install uv` (or `pip3 install uv`, or the installer at https://docs.astral.sh/uv).
+3. **Install everything** (uv fetches Python 3.12 automatically):
    ```
    uv sync
    ```
-3. **Install the custom-server CLI** for module 2:
+4. **Install the custom-server CLI** for module 2:
    ```
    uv tool install arcade-mcp
    ```
-4. **Add your keys**: copy `.env.example` to `.env` and fill it in. **Never commit `.env`** (it's gitignored).
+5. **Add your keys**: copy `.env.example` to `.env` and fill it in. **Never commit `.env`** (it's gitignored).
    ```
    cp .env.example .env
    ```
-5. **Run** anything through uv — no manual activate needed:
+6. **Run** anything through uv — no manual activate needed:
    ```
    uv run 03-langchain/email_agent.py
    uv run 04-crewai/main.py
@@ -55,6 +60,7 @@ The agents are model-agnostic. In `.env`, set `LLM_PROVIDER=openai` (default) or
 - **Arcade** — API key (https://api.arcade.dev)
 - **An LLM key** — OpenAI (https://platform.openai.com) *or* Anthropic (https://console.anthropic.com)
 - **Google** (Gmail + Calendar), **ClickUp** (for the planner)
+- Optional: **Slack** (only for `03-langchain/email_slack_agent.py`)
 - Optional: a **VPS** to run the planner 24/7
 
 ## Safety baked in
